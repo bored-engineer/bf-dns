@@ -5,6 +5,7 @@ binds:
     - { address: '168.235.68.45', port: 53 }
     - { address: '[2604:180:2:4f4::2]', port: 53 }
     - { address: '[2604:180:2:4f4::3]', port: 53 }
+# The file to log queries to
 log: 'server.log'
 # The main control domain used for tracking
 control: 'bitfl1p.com'
