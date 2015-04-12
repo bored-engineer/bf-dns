@@ -9,6 +9,8 @@ binds:
 log: 'server.log'
 # The main control domain used for tracking
 control: 'bitfl1p.com'
+# The contact email for MX and TXT records
+contact: 'luke@hydrantlabs.org'
 # The BitFlipped Domains to answer and the corresponding correct value
 questions:
     apple.com:

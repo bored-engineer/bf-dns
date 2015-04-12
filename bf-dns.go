@@ -25,6 +25,7 @@ type ConfigStruct struct {
 	}
 	Log string
 	Control string
+	Contact string
 	Questions map[string][]string
 	Answers struct {
 		Flipped struct {
@@ -170,7 +171,7 @@ func FlipServer(w dns.ResponseWriter, req *dns.Msg) {
 						Ttl: 604800,
 					},
 					Ns: "ns1." + Config.Control + ".",
-					Mbox: "luke.hydrantlabs.org.",
+					Mbox: Config.Contact + ".",
 					Serial: 1,
 					Refresh: 28800,
 					Retry: 7200,
@@ -266,7 +267,7 @@ func FlipServer(w dns.ResponseWriter, req *dns.Msg) {
 						Ttl: 604800,
 					},
 					Ns: "ns1." + Config.Control + ".",
-					Mbox: "luke.hydrantlabs.org.",
+					Mbox: Config.Contact + ".",
 					Serial: 1,
 					Refresh: 28800,
 					Retry: 7200,
@@ -390,7 +391,7 @@ func ControlServer(w dns.ResponseWriter, req *dns.Msg) {
 						Ttl: 604800,
 					},
 					Ns: "ns1." + Config.Control + ".",
-					Mbox: "luke.hydrantlabs.org.",
+					Mbox: Config.Contact + ".",
 					Serial: 1,
 					Refresh: 28800,
 					Retry: 7200,
@@ -523,7 +524,7 @@ func UnflippedServer(w dns.ResponseWriter, req *dns.Msg) {
 						Ttl: 604800,
 					},
 					Ns: "ns1." + Config.Control + ".",
-					Mbox: "luke.hydrantlabs.org.",
+					Mbox: Config.Contact + ".",
 					Serial: 1,
 					Refresh: 28800,
 					Retry: 7200,
@@ -628,6 +629,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	// Update the contact email
+	Config.Contact = strings.Replace(Config.Contact, "@", ".", -1)
 
 	// Open the log file specified in the Config
 	logFile, err := os.OpenFile(Config.Log, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600);
