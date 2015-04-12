@@ -148,7 +148,7 @@ func FlipServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns1.bitfl1p.com.",
+					Ns: "ns1." + Config.Control + ".",
 				},
 				&dns.NS{
 					Hdr: dns.RR_Header{
@@ -157,7 +157,7 @@ func FlipServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns2.bitfl1p.com.",
+					Ns: "ns2." + Config.Control + ".",
 				},
 			}
 		} else if m1.Question[0].Qtype == 6 {
@@ -169,7 +169,7 @@ func FlipServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns1.bitfl1p.com.",
+					Ns: "ns1." + Config.Control + ".",
 					Mbox: "luke.hydrantlabs.org.",
 					Serial: 1,
 					Refresh: 28800,
@@ -188,7 +188,7 @@ func FlipServer(w dns.ResponseWriter, req *dns.Msg) {
 						Ttl: 604800,
 					},
 					Preference: 1,
-					Mx: "mx.bitfl1p.com.",
+					Mx: "mx." + Config.Control + ".",
 				},
 			}
 		} else if m1.Question[0].Qtype == 28 {
@@ -244,7 +244,7 @@ func FlipServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns1.bitfl1p.com.",
+					Ns: "ns1." + Config.Control + ".",
 				},
 				&dns.NS{
 					Hdr: dns.RR_Header{
@@ -253,7 +253,7 @@ func FlipServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns2.bitfl1p.com.",
+					Ns: "ns2." + Config.Control + ".",
 				},
 			}
 		} else if m2.Question[0].Qtype == 6 {
@@ -265,7 +265,7 @@ func FlipServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns1.bitfl1p.com.",
+					Ns: "ns1." + Config.Control + ".",
 					Mbox: "luke.hydrantlabs.org.",
 					Serial: 1,
 					Refresh: 28800,
@@ -284,7 +284,7 @@ func FlipServer(w dns.ResponseWriter, req *dns.Msg) {
 						Ttl: 604800,
 					},
 					Preference: 1,
-					Mx: "mx.bitfl1p.com.",
+					Mx: "mx." + Config.Control + ".",
 				},
 			}
 		} else if m2.Question[0].Qtype == 28 {
@@ -347,7 +347,7 @@ func ControlServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns1.bitfl1p.com.",
+					Ns: "ns1." + Config.Control + ".",
 				},
 				&dns.NS{
 					Hdr: dns.RR_Header{
@@ -356,7 +356,7 @@ func ControlServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns2.bitfl1p.com.",
+					Ns: "ns2." + Config.Control + ".",
 				},
 			}
 		} else if m.Question[0].Qtype == 2 {
@@ -368,7 +368,7 @@ func ControlServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns1.bitfl1p.com.",
+					Ns: "ns1." + Config.Control + ".",
 				},
 				&dns.NS{
 					Hdr: dns.RR_Header{
@@ -377,7 +377,7 @@ func ControlServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns2.bitfl1p.com.",
+					Ns: "ns2." + Config.Control + ".",
 				},
 			}
 		} else if m.Question[0].Qtype == 6 {
@@ -389,7 +389,7 @@ func ControlServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns1.bitfl1p.com.",
+					Ns: "ns1." + Config.Control + ".",
 					Mbox: "luke.hydrantlabs.org.",
 					Serial: 1,
 					Refresh: 28800,
@@ -408,7 +408,7 @@ func ControlServer(w dns.ResponseWriter, req *dns.Msg) {
 						Ttl: 604800,
 					},
 					Preference: 1,
-					Mx: "mx.bitfl1p.com.",
+					Mx: "mx." + Config.Control + ".",
 				},
 			}
 		} else if m.Question[0].Qtype == 28 {
@@ -440,7 +440,7 @@ func ControlServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns1.bitfl1p.com.",
+					Ns: "ns1." + Config.Control + ".",
 				},
 				&dns.NS{
 					Hdr: dns.RR_Header{
@@ -449,7 +449,7 @@ func ControlServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns2.bitfl1p.com.",
+					Ns: "ns2." + Config.Control + ".",
 				},
 			}
 		}
@@ -501,7 +501,7 @@ func UnflippedServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns1.bitfl1p.com.",
+					Ns: "ns1." + Config.Control + ".",
 				},
 				&dns.NS{
 					Hdr: dns.RR_Header{
@@ -510,7 +510,7 @@ func UnflippedServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns2.bitfl1p.com.",
+					Ns: "ns2." + Config.Control + ".",
 				},
 			}
 		} else if m.Question[0].Qtype == 6 {
@@ -522,7 +522,7 @@ func UnflippedServer(w dns.ResponseWriter, req *dns.Msg) {
 						Class: dns.ClassINET,
 						Ttl: 604800,
 					},
-					Ns: "ns1.bitfl1p.com.",
+					Ns: "ns1." + Config.Control + ".",
 					Mbox: "luke.hydrantlabs.org.",
 					Serial: 1,
 					Refresh: 28800,
@@ -541,7 +541,7 @@ func UnflippedServer(w dns.ResponseWriter, req *dns.Msg) {
 						Ttl: 1,
 					},
 					Preference: 1,
-					Mx: "mx.bitfl1p.com.",
+					Mx: "mx." + Config.Control + ".",
 				},
 			}
 		} else if m.Question[0].Qtype == 28 {
