@@ -1,7 +1,10 @@
 # The addresses and ports to bind the server to
 binds:
-    - { address: '127.0.0.1', port: 5355 }
-log: 'server.log'
+    - { address: '127.0.0.1', port: 53 }
+    - { address: '168.235.68.44', port: 53 }
+    - { address: '168.235.68.45', port: 53 }
+    - { address: '[2604:180:2:4f4::2]', port: 53 }
+    - { address: '[2604:180:2:4f4::3]', port: 53 }
 # The main control domain used for tracking
 control: 'bitfl1p.com'
 # The BitFlipped Domains to answer and the corresponding correct value
