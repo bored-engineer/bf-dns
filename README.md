@@ -1,2 +1,2 @@
 # bf-dns
-The DNS server behind Project Bitfl1p
+The Golang DNS server behind Project Bitfl1p
